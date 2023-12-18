@@ -43,7 +43,7 @@ export default function Home() {
       </h2>
       <div className="max-w-7xl w-full justify-center px-2 flex flex-col items-center -mt-32">
         <div
-          className="cert-bg w-[1056px] h-[750px] flex flex-col items-center gap-8 py-16 scale-[.35] md:scale-[.5]"
+          className="cert-bg w-[1056px] h-[750px] flex flex-col items-center gap-8 py-16 scale-[.35] md:scale-[.5] overflow-hidden"
           id="downloadableDiv"
         >
           <div className="flex flex-col items-center gap-4">
@@ -52,7 +52,7 @@ export default function Home() {
               alt="badge"
               // height={60}
               // width={60}
-              className="h-16 w-auto"
+              className="h-20 w-auto"
             />
             <p className="text-5xl uppercase text-center leading-snug">
               Certificate <span className="block text-3xl">of completion</span>

@@ -47,7 +47,13 @@ export default function Home() {
           id="downloadableDiv"
         >
           <div className="flex flex-col items-center gap-4">
-            <Image src="/assets/badge.png" alt="badge" height={60} width={60} />
+            <img
+              src="/assets/badge.png"
+              alt="badge"
+              // height={60}
+              // width={60}
+              className="h-16 w-auto"
+            />
             <p className="text-5xl uppercase text-center leading-snug">
               Certificate <span className="block text-3xl">of completion</span>
             </p>
@@ -68,24 +74,24 @@ export default function Home() {
             </p>
           </div>
           <div className="relative flex flex-col justify-center items-center">
-            <Image
+            <img
               src="/assets/sig.png"
               alt="signature"
-              height={200}
-              width={200}
-              className="absolute -mt-12 scale-[.35] md:scale-[.5]"
+              // height={200}
+              // width={200}
+              className="h-20 w-auto absolute -mt-12"
             />
             <p className="text-2xl uppercase border-t border-black px-4 pt-2 mt-12">
               signature
             </p>
           </div>{" "}
           <div className="">
-            <Image
+            <img
               src="/assets/logo.png"
               alt="badge"
-              height={200}
-              width={200}
-              className="scale-[.35] md:scale-[.5]"
+              // height={200}
+              // width={200}
+              className="h-10 w-auto"
             />
           </div>
         </div>

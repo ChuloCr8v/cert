@@ -10,9 +10,10 @@ export default function Home() {
   const [awardee, setAwardee] = useState("");
   const [days, setDays] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [awardeeOk, setAwardeeOk] = useState(false);
 
   const handleDownload = () => {
-    const element = document?.getElementById("downloadableDiv") as HTMLElement;
+    const element = document.getElementById("downloadableDiv") as HTMLElement;
 
     html2canvas(element, {
       scale: 5,
@@ -30,9 +31,9 @@ export default function Home() {
       // Trigger the download
       link.click();
     });
-    setAwardee("");
-    setDays("");
-    setIsOpen(false);
+    // setAwardee("");
+    // setDays("");
+    // setIsOpen(false);
   };
 
   return (
@@ -40,7 +41,7 @@ export default function Home() {
       <h2 className="font-bold text-4xl text-center ">
         StableNet Certificate Generator
       </h2>
-      <div className="max-w-7xl w-full xl:grid grid-cols-2 xl:gap-96 justify-center px-2 flex flex-col items-center -mt-32">
+      <div className="max-w-7xl w-full justify-center px-2 flex flex-col items-center -mt-32">
         <div
           className="cert-bg w-[1056px] h-[750px] flex flex-col items-center gap-8 py-16 scale-[.35] md:scale-[.5]"
           id="downloadableDiv"
@@ -92,8 +93,11 @@ export default function Home() {
           title="Basic Modal"
           open={isOpen}
           onCancel={() => setIsOpen(false)}
-          onOk={handleDownload}
-          okText={"Download"}
+          onOk={() => {
+            setAwardeeOk(true);
+            setIsOpen(false);
+          }}
+          okText={"Done"}
         >
           <div className="grid gap-4 mt-4">
             <div className="w-full grid gap-2">
@@ -127,12 +131,21 @@ export default function Home() {
             </button> */}
           </div>{" "}
         </Modal>
-        <button
-          onClick={() => setIsOpen(true)}
-          className="p-2 rounded w-full border outline-none bg-blue-500 hover:border-blue-500 duration-300 text-white uppercase font-bold -mt-48"
-        >
-          Add Awardee
-        </button>
+        {awardeeOk ? (
+          <button
+            onClick={handleDownload}
+            className="p-2 rounded w-full border outline-none bg-blue-500 hover:border-blue-500 duration-300 text-white uppercase font-bold -mt-32 max-w-fit px-12"
+          >
+            Download Certificate
+          </button>
+        ) : (
+          <button
+            onClick={() => setIsOpen(true)}
+            className="p-2 rounded w-full border outline-none bg-blue-500 hover:border-blue-500 duration-300 text-white uppercase font-bold -mt-32 max-w-fit px-12"
+          >
+            Add Awardee
+          </button>
+        )}
       </div>
     </main>
   );

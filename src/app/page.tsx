@@ -15,7 +15,7 @@ export default function Home() {
     const element = document?.getElementById("downloadableDiv") as HTMLElement;
 
     html2canvas(element, {
-      scale: 5,
+      scale: 1,
     }).then((canvas) => {
       // Convert canvas to data URL
       const dataURL = canvas.toDataURL();
@@ -30,6 +30,9 @@ export default function Home() {
       // Trigger the download
       link.click();
     });
+    setAwardee("");
+    setDays("");
+    setIsOpen(false);
   };
 
   return (

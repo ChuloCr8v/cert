@@ -12,7 +12,7 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleDownload = () => {
-    const element = document.getElementById("downloadableDiv");
+    const element = document?.getElementById("downloadableDiv") as HTMLElement;
 
     html2canvas(element, {
       scale: 5,

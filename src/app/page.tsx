@@ -9,7 +9,7 @@ import { Modal } from "antd";
 export default function Home() {
   const [awardee, setAwardee] = useState("");
   const [days, setDays] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDownload = () => {
     const element = document?.getElementById("downloadableDiv") as HTMLElement;

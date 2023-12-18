@@ -15,7 +15,7 @@ export default function Home() {
     const element = document?.getElementById("downloadableDiv") as HTMLElement;
 
     html2canvas(element, {
-      scale: 1,
+      scale: 5,
     }).then((canvas) => {
       // Convert canvas to data URL
       const dataURL = canvas.toDataURL();
@@ -72,7 +72,7 @@ export default function Home() {
               alt="signature"
               height={200}
               width={200}
-              className="absolute -mt-12"
+              className="absolute -mt-12 scale-[.35] md:scale-[.5]"
             />
             <p className="text-2xl uppercase border-t border-black px-4 pt-2 mt-12">
               signature
@@ -84,6 +84,7 @@ export default function Home() {
               alt="badge"
               height={200}
               width={200}
+              className="scale-[.35] md:scale-[.5]"
             />
           </div>
         </div>
